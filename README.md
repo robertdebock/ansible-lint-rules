@@ -40,3 +40,22 @@ Incorrect:
   package:
     name: "{{ packages[ansible_distribution }}"
 ```
+
+ValuesWithVariableNotQuoted
+---------------------------
+
+ROBERT3: Find values with a variable in it somwhere without quotes.
+
+Correct:
+```
+- name: do something
+  package:
+    name: "/tmp/{{ file }}"
+```
+
+Incorrect:
+```
+- name: do something
+  package:
+    name: /tmp/{{ file }}
+```
