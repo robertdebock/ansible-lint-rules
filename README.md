@@ -59,3 +59,22 @@ Incorrect:
   package:
     name: /tmp/{{ file }}
 ```
+
+UnbalancedQuotes
+----------------
+
+ROBERT4:
+
+Correct:
+```
+- name: do something
+  package:
+    name: "bla"
+```
+
+Incorrect:
+```
+- name: do something
+  package:
+    name: bla"
+```
